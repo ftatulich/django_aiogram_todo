@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  aiogram-bot:
+    build:
+      context: telegram_bot
+      dockerfile: Dockerfile
+    restart: always
+
+  django-app:
+    build:
+      context: todo_api
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+    restart: always
